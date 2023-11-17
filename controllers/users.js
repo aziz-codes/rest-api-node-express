@@ -6,7 +6,7 @@ const users = [
   { name: "user5", email: "user5@gmail.com" },
 ];
 
-export const getUsers = (req, res) => {
+export const getUsers = (_, res) => {
   res.send(users);
 };
 export const saveUser = (req, res) => {
@@ -22,5 +22,3 @@ export const saveUser = (req, res) => {
     res.send(users);
   }
 };
-
-// test commit
