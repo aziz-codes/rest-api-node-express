@@ -9,3 +9,16 @@ const users = [
 export const getUsers = (req, res) => {
   res.send(users);
 };
+export const saveUser = (req, res) => {
+  const { name, email } = req.body;
+  if (name.length < 3 || name === "") {
+    res.send("Name must be more than 3 chars");
+  } else if (email === "" || email.length < 4) {
+    res.send("Email must be more than 4 chars");
+  } else if (!email.endsWith(".com")) {
+    res.send("Please provide a vallid email");
+  } else {
+    users.push({ name, email });
+    res.send(users);
+  }
+};
